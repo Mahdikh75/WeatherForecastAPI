@@ -6,7 +6,26 @@ using System.Threading.Tasks;
 
 namespace WeatherForecast.API
 {
-    internal class WeatherClient
+    public class WeatherClient : ITaskWeather
     {
+        private double latitude = 0;
+        private double longitude = 0;
+        private string NameCity = string.Empty;
+
+        public WeatherClient(string city)
+        {
+            this.NameCity = city;
+        }
+
+        public WeatherClient(double lat, double lg)
+        {
+            this.latitude = lat;
+            this.longitude = lg;
+        }
+
+        public async Task<string> Query()
+        {
+            return await new HttpClient().GetStringAsync("");
+        }
     }
 }
