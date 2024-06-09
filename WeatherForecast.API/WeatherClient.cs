@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WeatherForecast.API
 {
-    public class WeatherClient : ITaskWeather
+    public class WeatherClient 
     {
         private double latitude = 0;
         private double longitude = 0;
@@ -23,9 +23,5 @@ namespace WeatherForecast.API
             this.longitude = lg;
         }
 
-        public async Task<string> Query()
-        {
-            return await new HttpClient().GetStringAsync("");
-        }
     }
 }
