@@ -23,5 +23,6 @@ namespace WeatherForecast.API
             this.longitude = lg;
         }
 
+
     }
 }
